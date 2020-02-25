@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import Routes from './routes';
 
-// import GlobalStyle from './styles/global';
+import GlobalStyle from './styles/global';
 
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -13,7 +13,7 @@ toast.configure();
 const App = () => (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes />
-        {/* <GlobalStyle /> */}
+        <GlobalStyle />
     </BrowserRouter>
 );
 
