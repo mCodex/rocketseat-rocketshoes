@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "172907413e6a5ad5552acbad4f36e87b",
+    "revision": "6852b4ceef62da68ed0148e6ef1815f9",
     "url": "/rocketseat-rocketshoes/index.html"
   },
   {
-    "revision": "0f574dc89b30f4b487b7",
+    "revision": "e1b8f1446124fbd0169c",
     "url": "/rocketseat-rocketshoes/static/css/2.5dbdccff.chunk.css"
   },
   {
-    "revision": "0f574dc89b30f4b487b7",
-    "url": "/rocketseat-rocketshoes/static/js/2.2d4bc58f.chunk.js"
+    "revision": "e1b8f1446124fbd0169c",
+    "url": "/rocketseat-rocketshoes/static/js/2.24e15662.chunk.js"
   },
   {
     "revision": "bf23039b4e70a07c5aeb1b4010df3572",
-    "url": "/rocketseat-rocketshoes/static/js/2.2d4bc58f.chunk.js.LICENSE.txt"
+    "url": "/rocketseat-rocketshoes/static/js/2.24e15662.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7e048911eaf26f510731",
-    "url": "/rocketseat-rocketshoes/static/js/main.17f6a11a.chunk.js"
+    "revision": "5afb5c24cb4fc5ac5562",
+    "url": "/rocketseat-rocketshoes/static/js/main.0ff8f30e.chunk.js"
   },
   {
     "revision": "c41c55c3787f39bdce61",
@@ -26,5 +26,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "3c9a1ce505a48f2c15ba9505b6f5667b",
     "url": "/rocketseat-rocketshoes/static/media/bg.3c9a1ce5.svg"
+  },
+  {
+    "revision": "879557c5bdbbd3743a7680c651e31d08",
+    "url": "/rocketseat-rocketshoes/static/media/logo.879557c5.svg"
   }
 ]);
