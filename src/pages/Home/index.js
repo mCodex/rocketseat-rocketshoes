@@ -1,9 +1,27 @@
 import React, { memo, useState, useEffect } from 'react';
+import { MdAddShoppingCart } from 'react-icons/md';
 
-const Main = () => {
+import shoeImg from '~/assets/images/shoe.jpg';
+
+import { ProductList } from './styles';
+
+const Home = () => {
     return (
-        <h1>Hello World</h1>
-    )
-}
+        <ProductList>
+            <li>
+                <img src={shoeImg} alt="Shoe" />
 
-export default memo(Main)
+                <strong>Tênis</strong>
+                <span>R$</span>
+                <button type="submit">
+                    <div>
+                        <MdAddShoppingCart size={16} color="#fff" />
+                    </div>
+                    <span>ADICIONAR AO CARRINHO</span>
+                </button>
+            </li>
+        </ProductList>
+    );
+};
+
+export default memo(Home);
