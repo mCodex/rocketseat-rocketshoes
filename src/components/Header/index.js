@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { MdShoppingBasket } from 'react-icons/md';
 import { Container, Cart } from './styles';
@@ -6,6 +7,8 @@ import { Container, Cart } from './styles';
 import logo from '~/assets/images/logo.svg';
 
 const Header = () => {
+    const cartSize = useSelector(state => state.cart.length);
+
     return (
         <Container>
             <Link to="/">
@@ -14,7 +17,9 @@ const Header = () => {
             <Cart to="/cart">
                 <div>
                     <strong>Meu Carrinho</strong>
-                    <span>3 itens</span>
+                    <span>{`${cartSize} ${
+                        cartSize > 1 ? 'itens' : 'item'
+                    }`}</span>
                 </div>
                 <MdShoppingBasket size={36} color="#fff" />
             </Cart>

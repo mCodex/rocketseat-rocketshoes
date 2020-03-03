@@ -1,5 +1,6 @@
 import React, { memo, useState, useEffect, useCallback } from 'react';
 import { MdAddShoppingCart } from 'react-icons/md';
+import { useDispatch } from 'react-redux';
 
 import moneyFormatter from '~/lib/moneyFormatter';
 
@@ -15,6 +16,8 @@ type Product = {
 };
 
 const Home = () => {
+    const dispatch = useDispatch();
+
     const [products, setProducts] = useState([]);
 
     const loadDataFromAPI = useCallback(async () => {
@@ -32,20 +35,26 @@ const Home = () => {
         loadDataFromAPI();
     }, [loadDataFromAPI]);
 
-    const renderProductItem = ({ id, title, price, image }: Product) => (
-        <li key={id.toString()}>
-            <img src={image} alt="Shoe" />
+    const handleAddProduct = product =>
+        dispatch({ type: 'ADD_TO_CART', product });
 
-            <strong>{title}</strong>
-            <span>{price}</span>
-            <button type="submit">
-                <div>
-                    <MdAddShoppingCart size={16} color="#fff" />
-                </div>
-                <span>ADICIONAR AO CARRINHO</span>
-            </button>
-        </li>
-    );
+    const renderProductItem = (product: Product) => {
+        const { id, title, price, image } = product;
+        return (
+            <li key={id.toString()}>
+                <img src={image} alt="Shoe" />
+
+                <strong>{title}</strong>
+                <span>{price}</span>
+                <button type="submit" onClick={handleAddProduct}>
+                    <div>
+                        <MdAddShoppingCart size={16} color="#fff" />
+                    </div>
+                    <span>ADICIONAR AO CARRINHO</span>
+                </button>
+            </li>
+        );
+    };
 
     return (
         <ProductList>
