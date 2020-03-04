@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5ff5b90f4d0a505520bc86ea1f5a5e1e",
+    "revision": "f98eddd58d3c92db18636799dbb509cf",
     "url": "/rocketseat-rocketshoes/index.html"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/rocketseat-rocketshoes/static/js/2.1eb830a3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6dde3793e233051cb8a8",
-    "url": "/rocketseat-rocketshoes/static/js/main.75c5c6a1.chunk.js"
+    "revision": "2ee6f32120cc65f0c9b7",
+    "url": "/rocketseat-rocketshoes/static/js/main.86a6d16c.chunk.js"
   },
   {
     "revision": "c41c55c3787f39bdce61",
