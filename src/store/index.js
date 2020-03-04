@@ -1,11 +1,10 @@
-import { createStore } from 'redux';
-
+import { createStore, applyMiddleware, compose } from 'redux';
 import rootReducer from './modules/rootReducer';
 
 const enhancer =
     process.env.NODE_ENV === 'development'
         ? console.tron.createEnhancer()
-        : null;
+        : compose(applyMiddleware());
 
 const store = createStore(rootReducer, enhancer);
 
