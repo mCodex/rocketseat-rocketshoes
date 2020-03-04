@@ -42,11 +42,11 @@ const Home = () => {
         const { id, title, price, image } = product;
         return (
             <li key={id.toString()}>
-                <img src={image} alt="Shoe" />
+                <img src={image} alt={title} />
 
                 <strong>{title}</strong>
                 <span>{price}</span>
-                <button type="submit" onClick={handleAddProduct}>
+                <button type="submit" onClick={() => handleAddProduct(product)}>
                     <div>
                         <MdAddShoppingCart size={16} color="#fff" />
                     </div>

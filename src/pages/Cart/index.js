@@ -1,15 +1,50 @@
 import React, { memo } from 'react';
+import { useSelector } from 'react-redux';
 
 import {
     MdRemoveCircleOutline,
     MdAddCircleOutline,
     MdDelete,
 } from 'react-icons/md';
-import shoeImg from '~/assets/images/shoe.jpg';
 
 import { Container, Total, ProductTable } from './styles';
 
 const Cart = () => {
+    const cart = useSelector(state => state.cart);
+
+    const renderProductRow = product => {
+        const { id, title, price, image, amout } = product;
+
+        return (
+            <tr key={id.toString()}>
+                <td>
+                    <img src={image} alt={title} />
+                </td>
+                <td>
+                    <strong>{title}</strong>
+                    <span>{price}</span>
+                </td>
+                <td>
+                    <div>
+                        <button type="button">
+                            <MdRemoveCircleOutline size={20} color="#7151c9" />
+                        </button>
+                        <input type="number" readOnly value={amout} />
+                        <button type="button">
+                            <MdAddCircleOutline size={20} color="#7151c9" />
+                        </button>
+                    </div>
+                </td>
+                <td>
+                    <strong>{price}</strong>
+                </td>
+                <td>
+                    <MdDelete size={20} color="#7151c9" />
+                </td>
+            </tr>
+        );
+    };
+
     return (
         <Container>
             <ProductTable>
@@ -23,40 +58,7 @@ const Cart = () => {
                     </tr>
                 </thead>
 
-                <tbody>
-                    <tr>
-                        <td>
-                            <img src={shoeImg} alt="Tenis" />
-                        </td>
-                        <td>
-                            <strong>Tênis</strong>
-                            <span>R$</span>
-                        </td>
-                        <td>
-                            <div>
-                                <button type="button">
-                                    <MdRemoveCircleOutline
-                                        size={20}
-                                        color="#7151c9"
-                                    />
-                                </button>
-                                <input type="number" readOnly value={1} />
-                                <button type="button">
-                                    <MdAddCircleOutline
-                                        size={20}
-                                        color="#7151c9"
-                                    />
-                                </button>
-                            </div>
-                        </td>
-                        <td>
-                            <strong>R$</strong>
-                        </td>
-                        <td>
-                            <MdDelete size={20} color="#7151c9" />
-                        </td>
-                    </tr>
-                </tbody>
+                <tbody>{cart.map(product => renderProductRow(product))}</tbody>
             </ProductTable>
 
             <footer>
