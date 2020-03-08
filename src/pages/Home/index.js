@@ -1,6 +1,6 @@
 import React, { memo, useState, useEffect, useCallback } from 'react';
 import { MdAddShoppingCart } from 'react-icons/md';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { addToCart } from '~/store/modules/cart/actions';
 
@@ -18,6 +18,12 @@ type Product = {
 };
 
 const Home = () => {
+    const amount = useSelector(state =>
+        state.cart.reduce((amount, product) => {
+            amount[product.id] = product.amount;
+            return amount;
+        }, {})
+    );
     const dispatch = useDispatch();
 
     const [products, setProducts] = useState([]);
@@ -44,7 +50,8 @@ const Home = () => {
                 <span>{moneyFormatter.format(price)}</span>
                 <button type="submit" onClick={() => handleAddProduct(product)}>
                     <div>
-                        <MdAddShoppingCart size={16} color="#fff" />
+                        <MdAddShoppingCart size={16} color="#fff" />{' '}
+                        {amount[id] || 0}
                     </div>
                     <span>ADICIONAR AO CARRINHO</span>
                 </button>
