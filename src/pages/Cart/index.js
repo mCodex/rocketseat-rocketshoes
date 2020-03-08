@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import {
     MdRemoveCircleOutline,
@@ -11,9 +11,10 @@ import { Container, Total, ProductTable } from './styles';
 
 const Cart = () => {
     const cart = useSelector(state => state.cart);
+    const dispatch = useDispatch();
 
     const renderProductRow = product => {
-        const { id, title, price, image, amout } = product;
+        const { id, title, price, image, amount } = product;
 
         return (
             <tr key={id.toString()}>
@@ -29,7 +30,7 @@ const Cart = () => {
                         <button type="button">
                             <MdRemoveCircleOutline size={20} color="#7151c9" />
                         </button>
-                        <input type="number" readOnly value={amout} />
+                        <input type="number" readOnly value={amount} />
                         <button type="button">
                             <MdAddCircleOutline size={20} color="#7151c9" />
                         </button>
