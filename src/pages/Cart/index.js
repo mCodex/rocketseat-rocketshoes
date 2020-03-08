@@ -38,7 +38,15 @@ const Cart = () => {
     const handleRemoveItem = id => dispatch(removeFromCart(id));
 
     const renderProductRow = product => {
-        const { id, title, price, image, amount, subtotal } = product;
+        const {
+            id,
+            title,
+            // price,
+            image,
+            amount,
+            subtotal,
+            priceFormatted,
+        } = product;
 
         return (
             <tr key={id.toString()}>
@@ -47,7 +55,7 @@ const Cart = () => {
                 </td>
                 <td>
                     <strong>{title}</strong>
-                    <span>{moneyFormatter.format(price)}</span>
+                    <span>{priceFormatted}</span>
                 </td>
                 <td>
                     <div>
