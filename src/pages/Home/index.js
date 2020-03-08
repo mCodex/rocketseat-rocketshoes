@@ -2,6 +2,8 @@ import React, { memo, useState, useEffect, useCallback } from 'react';
 import { MdAddShoppingCart } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
 
+import { addToCart } from '~/store/modules/cart/actions';
+
 import moneyFormatter from '~/lib/moneyFormatter';
 
 import api from '~/services/api';
@@ -35,8 +37,7 @@ const Home = () => {
         loadDataFromAPI();
     }, [loadDataFromAPI]);
 
-    const handleAddProduct = product =>
-        dispatch({ type: 'ADD_TO_CART', product });
+    const handleAddProduct = product => dispatch(addToCart(product));
 
     const renderProductItem = (product: Product) => {
         const { id, title, price, image } = product;

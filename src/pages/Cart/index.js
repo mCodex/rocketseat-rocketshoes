@@ -1,17 +1,19 @@
 import React, { memo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
 import {
     MdRemoveCircleOutline,
     MdAddCircleOutline,
     MdDelete,
 } from 'react-icons/md';
+import { removeFromCart } from '~/store/modules/cart/actions';
 
 import { Container, Total, ProductTable } from './styles';
 
 const Cart = () => {
     const cart = useSelector(state => state.cart);
     const dispatch = useDispatch();
+
+    const handleRemoveItem = id => dispatch(removeFromCart(id));
 
     const renderProductRow = product => {
         const { id, title, price, image, amount } = product;
@@ -40,7 +42,9 @@ const Cart = () => {
                     <strong>{price}</strong>
                 </td>
                 <td>
-                    <MdDelete size={20} color="#7151c9" />
+                    <button type="button" onClick={() => handleRemoveItem(id)}>
+                        <MdDelete size={20} color="#7151c9" />
+                    </button>
                 </td>
             </tr>
         );
