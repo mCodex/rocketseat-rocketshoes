@@ -24,10 +24,9 @@ const Cart = () => {
     );
 
     const total = useSelector(state =>
-        state.cart.reduce(
-            (total, product) => (total += product.price * product.amount),
-            0
-        )
+        state.cart.reduce((totalSum, product) => {
+            return totalSum + product.price * product.amount;
+        }, 0)
     );
 
     const dispatch = useDispatch();
