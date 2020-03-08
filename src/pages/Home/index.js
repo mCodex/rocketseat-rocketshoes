@@ -2,7 +2,7 @@ import React, { memo, useState, useEffect, useCallback } from 'react';
 import { MdAddShoppingCart } from 'react-icons/md';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { addToCart } from '~/store/modules/cart/actions';
+import { addToCartRequest } from '~/store/modules/cart/actions';
 
 import moneyFormatter from '~/lib/moneyFormatter';
 
@@ -38,7 +38,7 @@ const Home = () => {
         loadDataFromAPI();
     }, [loadDataFromAPI]);
 
-    const handleAddProduct = product => dispatch(addToCart(product));
+    const handleAddProduct = ({ id }) => dispatch(addToCartRequest(id));
 
     const renderProductItem = (product: Product) => {
         const { id, title, price, image } = product;
