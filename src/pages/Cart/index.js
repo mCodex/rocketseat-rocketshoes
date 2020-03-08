@@ -5,12 +5,28 @@ import {
     MdAddCircleOutline,
     MdDelete,
 } from 'react-icons/md';
+
 import { removeFromCart, updateAmount } from '~/store/modules/cart/actions';
+
+import moneyFormatter from '~/lib/moneyFormatter';
 
 import { Container, Total, ProductTable } from './styles';
 
 const Cart = () => {
-    const cart = useSelector(state => state.cart);
+    const cart = useSelector(state =>
+        state.cart.map(product => ({
+            ...product,
+            subtotal: product.price * product.amount,
+        }))
+    );
+
+    const total = useSelector(state =>
+        state.cart.reduce(
+            (total, product) => (total += product.price * product.amount),
+            0
+        )
+    );
+
     const dispatch = useDispatch();
 
     const increment = product =>
@@ -22,7 +38,7 @@ const Cart = () => {
     const handleRemoveItem = id => dispatch(removeFromCart(id));
 
     const renderProductRow = product => {
-        const { id, title, price, image, amount } = product;
+        const { id, title, price, image, amount, subtotal } = product;
 
         return (
             <tr key={id.toString()}>
@@ -31,7 +47,7 @@ const Cart = () => {
                 </td>
                 <td>
                     <strong>{title}</strong>
-                    <span>{price}</span>
+                    <span>{moneyFormatter.format(price)}</span>
                 </td>
                 <td>
                     <div>
@@ -51,7 +67,7 @@ const Cart = () => {
                     </div>
                 </td>
                 <td>
-                    <strong>{price}</strong>
+                    <strong>{moneyFormatter.format(subtotal)}</strong>
                 </td>
                 <td>
                     <button type="button" onClick={() => handleRemoveItem(id)}>
@@ -82,7 +98,7 @@ const Cart = () => {
                 <button type="submit">Finalizar Pedido</button>
                 <Total>
                     <span>TOTAL</span>
-                    <strong>R$</strong>
+                    <strong>{moneyFormatter.format(total)}</strong>
                 </Total>
             </footer>
         </Container>

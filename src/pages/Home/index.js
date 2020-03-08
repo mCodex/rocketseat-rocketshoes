@@ -25,12 +25,7 @@ const Home = () => {
     const loadDataFromAPI = useCallback(async () => {
         const productsFromAPI = await api.get('products');
 
-        const data = productsFromAPI.data.map(product => ({
-            ...product,
-            price: moneyFormatter.format(product.price),
-        }));
-
-        setProducts(data);
+        setProducts(productsFromAPI.data);
     }, []);
 
     useEffect(() => {
@@ -46,7 +41,7 @@ const Home = () => {
                 <img src={image} alt={title} />
 
                 <strong>{title}</strong>
-                <span>{price}</span>
+                <span>{moneyFormatter.format(price)}</span>
                 <button type="submit" onClick={() => handleAddProduct(product)}>
                     <div>
                         <MdAddShoppingCart size={16} color="#fff" />
