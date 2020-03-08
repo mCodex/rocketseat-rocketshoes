@@ -6,7 +6,10 @@ import {
     MdDelete,
 } from 'react-icons/md';
 
-import { removeFromCart, updateAmount } from '~/store/modules/cart/actions';
+import {
+    removeFromCart,
+    updateAmountRequest,
+} from '~/store/modules/cart/actions';
 
 import moneyFormatter from '~/lib/moneyFormatter';
 
@@ -30,10 +33,10 @@ const Cart = () => {
     const dispatch = useDispatch();
 
     const increment = product =>
-        dispatch(updateAmount(product.id, product.amount + 1));
+        dispatch(updateAmountRequest(product.id, product.amount + 1));
 
     const decrement = product =>
-        dispatch(updateAmount(product.id, product.amount - 1));
+        dispatch(updateAmountRequest(product.id, product.amount - 1));
 
     const handleRemoveItem = id => dispatch(removeFromCart(id));
 
