@@ -16,6 +16,7 @@ https://mcodex.github.io/rocketseat-rocketshoes
 * [react-app-rewired](https://github.com/timarney/react-app-rewired)
 * [customize-cra](https://github.com/arackaf/customize-cra)
 * [json-server](https://github.com/typicode/json-server) - I've also used [My JSON Server](https://my-json-server.typicode.com/) to mock my `db.json`
+* [immerjs](https://immerjs.github.io/immer/docs/introduction)
 
 ## 📦 Installation
 
