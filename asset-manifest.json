@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/rocketseat-rocketshoes/static/js/main.646c12f6.chunk.js",
-    "main.js.map": "/rocketseat-rocketshoes/static/js/main.646c12f6.chunk.js.map",
+    "main.js": "/rocketseat-rocketshoes/static/js/main.36eb55d7.chunk.js",
+    "main.js.map": "/rocketseat-rocketshoes/static/js/main.36eb55d7.chunk.js.map",
     "runtime-main.js": "/rocketseat-rocketshoes/static/js/runtime-main.ad958cfa.js",
     "runtime-main.js.map": "/rocketseat-rocketshoes/static/js/runtime-main.ad958cfa.js.map",
     "static/css/2.5dbdccff.chunk.css": "/rocketseat-rocketshoes/static/css/2.5dbdccff.chunk.css",
     "static/js/2.dedcddd2.chunk.js": "/rocketseat-rocketshoes/static/js/2.dedcddd2.chunk.js",
     "static/js/2.dedcddd2.chunk.js.map": "/rocketseat-rocketshoes/static/js/2.dedcddd2.chunk.js.map",
     "index.html": "/rocketseat-rocketshoes/index.html",
-    "precache-manifest.a754719258e08f3df07c209d5d57b4a2.js": "/rocketseat-rocketshoes/precache-manifest.a754719258e08f3df07c209d5d57b4a2.js",
+    "precache-manifest.8d6ffa1513d33cc03a57b697c16713c8.js": "/rocketseat-rocketshoes/precache-manifest.8d6ffa1513d33cc03a57b697c16713c8.js",
     "service-worker.js": "/rocketseat-rocketshoes/service-worker.js",
     "static/css/2.5dbdccff.chunk.css.map": "/rocketseat-rocketshoes/static/css/2.5dbdccff.chunk.css.map",
     "static/js/2.dedcddd2.chunk.js.LICENSE.txt": "/rocketseat-rocketshoes/static/js/2.dedcddd2.chunk.js.LICENSE.txt",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.ad958cfa.js",
     "static/css/2.5dbdccff.chunk.css",
     "static/js/2.dedcddd2.chunk.js",
-    "static/js/main.646c12f6.chunk.js"
+    "static/js/main.36eb55d7.chunk.js"
   ]
 }
